@@ -40,7 +40,7 @@ public class Ship extends JPanel{
 
     public void move(GUI game, int LeftorRight) { // Move to the left if int is negative and to the right if the int is positive 
 
-        switch (this.x_pos + LeftorRight * this.speed < 0 ? 1 : this.x_pos + LeftorRight * this.speed > 500 - this.width ? 1 : 0 ) {
+        switch (this.x_pos + LeftorRight * this.speed < 0 ? 1 : this.x_pos + LeftorRight * this.speed > game.getWidth() - this.width ? 1 : 0 ) {
             case 1:
                 break;
         

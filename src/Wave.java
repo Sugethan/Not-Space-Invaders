@@ -38,7 +38,7 @@ public class Wave {
 
                     game.add(new Invader(game, n * distance , y_init, 1 + game.countdown/accel_rate, true)); // Creates a wave of five invaders top left
                     game.add(new Invader(game, game.getWidth() - invader_width - n * distance, y_init, - speed_init - game.countdown/accel_rate, true)); // Creates a wave of five invaders top right
-                    if (game.countdown%accel_rate/3 == 0 & n < invaders_per_vertical_wave ) { // Cooldown between pop and three invaders only  
+                    if (game.countdown%accel_rate/2 == 0 & n < invaders_per_vertical_wave ) { // Cooldown between pop and three invaders only  
                         game.add(new Invader(game, randomX, n * distance, speed_init, false)); // Creates a vertical wave of three invaders at random x position
                     }
                 }

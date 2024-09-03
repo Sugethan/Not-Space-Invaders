@@ -11,15 +11,17 @@ public class Invader extends JPanel{
     private final Image invader;
     private final int width = 40;
     private final int height = 40;
-    private int speed;
-    private final int screen_width = 500;
+    private final int descent = 50; 
+    private final int screen_width;
     private boolean normal;
     
     private int x_pos;
     private int y_pos;
+    private int speed;
 
     Invader(GUI game, int initial_x, int initial_y, int velocity, boolean bool) {  // (Game, initial x position, initial y position, speed, horizontal wave ?)
 
+        this.screen_width = game.getWidth();
         this.setPreferredSize(new Dimension(this.width, this.height)); // Set panel size
         this.invader = new ImageIcon("Rakata.png").getImage(); // Load image
         this.setOpaque(false); // Set non-opaque background for the panel
@@ -72,7 +74,7 @@ public class Invader extends JPanel{
             switch (this.x_pos + this.speed > this.screen_width - this.width ? 1 : this.x_pos + this.speed < 0 ? 1 : 0) {
 
                 case 1:   // If the invader has reached the border, lower it
-                    this.y_pos += 50;
+                    this.y_pos += this.descent;
                     this.setBounds(this.x_pos, this.y_pos, this.width, this.height);
                     if (this.y_pos >= line_height - this.height) {  // If the invader touches the ground
                         bool.set(true);
