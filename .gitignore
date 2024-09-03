@@ -1,3 +1,7 @@
 # Ignores compiled files 
 
 *.class
+
+# Ignores VScode directory
+
+.vscode/

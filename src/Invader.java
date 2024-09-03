@@ -21,7 +21,7 @@ public class Invader extends JPanel{
     Invader(GUI game, int initial_x, int initial_y, int velocity, boolean bool) {  // (Game, initial x position, initial y position, speed, horizontal wave ?)
 
         this.setPreferredSize(new Dimension(this.width, this.height)); // Set panel size
-        this.invader = new ImageIcon("Rakatan.png").getImage(); // Load image
+        this.invader = new ImageIcon("Rakata.png").getImage(); // Load image
         this.setOpaque(false); // Set non-opaque background for the panel
         this.x_pos = initial_x; // Initial position
         this.y_pos = initial_y; 
