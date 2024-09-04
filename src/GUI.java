@@ -96,9 +96,9 @@ public class GUI extends JFrame {
             GUI.this.setIgnoreRepaint(true);
         };
 
-        scheduler.scheduleAtFixedRate(Shooting, 0, 750, TimeUnit.MILLISECONDS); // Shoots bullet
-        scheduler.scheduleAtFixedRate(invaders_pop, 0, 5000, TimeUnit.MILLISECONDS); //Makes invaders pop
-        scheduler.scheduleAtFixedRate(invading, 0, 20, TimeUnit.MILLISECONDS); // Moves invaders 
+        scheduler.scheduleAtFixedRate(Shooting, 0, 500, TimeUnit.MILLISECONDS); // Shoots bullet
+        scheduler.scheduleAtFixedRate(invaders_pop, 0, 6000, TimeUnit.MILLISECONDS); //Makes invaders pop
+        scheduler.scheduleAtFixedRate(invading, 0, 40, TimeUnit.MILLISECONDS); // Moves invaders 
         scheduler.scheduleAtFixedRate(bullet_move, 0, 20, TimeUnit.MILLISECONDS); // Moves bullets
         scheduler.scheduleAtFixedRate(destroy_ship, 0, 100, TimeUnit.MILLISECONDS); // Remove destroyed ships and the bullets that caused the destruction
         scheduler.scheduleAtFixedRate(screen_refresh, 0, 1, TimeUnit.MILLISECONDS); // Redraw every panels

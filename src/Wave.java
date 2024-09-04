@@ -8,13 +8,14 @@ public class Wave {
     private static final int y_init = 0;
     private static final int speed_init = 1;
     private static final int invader_width = 40;
-    private static final int distance = 50; // Distance between two invaders
+    private static final int distance = 70; // Distance between two invaders
     private static final int accel_rate = 1500; // Number of "invading" taks between each game phases
     private static final int invaders_per_wave = 5;
+    private static final int invaders_per_Hwave = 3;
 
     public static void WavePop(GUI game) {
 
-        switch (game.countdown/accel_rate > 1 ? 2: game.countdown/accel_rate > 0 ? 1 : 0) {
+        switch (game.countdown/accel_rate > -1 ? 2: game.countdown/accel_rate > 0 ? 1 : 0) {
 
             case 0:
                 for (int n = 0; n < invaders_per_wave; n++) {
@@ -37,7 +38,7 @@ public class Wave {
 
                     game.add(new Invader(game, n * distance , y_init, 1 + game.countdown/accel_rate, true)); // Creates a wave of five invaders top left
                     game.add(new Invader(game, game.getWidth() - invader_width - n * distance, y_init, - speed_init - game.countdown/accel_rate, true)); // Creates a wave of five invaders top right
-                    if (game.countdown%(accel_rate/4) == 0) { // Cooldown between pop and three invaders only  
+                    if (randomX%5 == 0 & n < invaders_per_Hwave ) { // Cooldown between pop 
                         game.add(new Invader(game, randomX, n * distance, speed_init, false)); // Creates a vertical wave of five invaders at random x position
                     }
                 }
