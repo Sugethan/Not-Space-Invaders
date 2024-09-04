@@ -17,20 +17,33 @@ public class StartScreen{
         text.setForeground(Color.RED); // Text color
         text.setBackground(Color.BLACK);
         text.setFont(new Font("MONOSPACED", Font.CENTER_BASELINE, 50));
+        game.getContentPane().removeAll(); // Removes all components from the frame
         game.add(text);
-        text.setBounds(100, 120, 400, 200);
+        text.setBounds(120, 120, 400, 150);
 
-        JButton button = new JButton("Play");
-        button.addActionListener(new ActionListener() {
+        JButton play = new JButton("Play");
+        play.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 game.start();
             }
         });
 
-        game.add(button);
-        button.setBounds(200, 350, 100, 50);
-        button.setBackground(Color.RED);
-        button.setForeground(Color.WHITE);
+        game.add(play);
+        play.setBounds(200, 275, 100, 50);
+        play.setBackground(Color.RED);
+        play.setForeground(Color.WHITE);
+
+        JButton Scores = new JButton("Scores");
+        Scores.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                RecordScreen.screen(game);
+            }
+        });
+
+        game.add(Scores);
+        Scores.setBounds(200, 350, 100, 50);
+        Scores.setBackground(Color.RED);
+        Scores.setForeground(Color.WHITE);
 
         game.setIgnoreRepaint(false);
         game.revalidate();

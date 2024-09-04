@@ -12,7 +12,7 @@ public class Bullet extends JPanel{
 
     private final int width = 6;
     private final int height = 10;
-    private final int speed = 4;
+    private final int speed = 2;
 
     private int x_pos;
     private int y_pos;

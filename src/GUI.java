@@ -79,7 +79,7 @@ public class GUI extends JFrame {
                 try {
                     while (!scheduler.awaitTermination(1, TimeUnit.SECONDS)) {} // Waits for termination for one second
                 } catch (InterruptedException e) {} //Does nothing if the tasks were not terminated properly
-                GUI.this.getContentPane().removeAll(); // Removes all panels from the frame
+                GUI.this.infos.RecordTopScores();
                 GameOver.screen(GUI.this, GUI.this.infos); // Game over screen
             };
         };
@@ -96,8 +96,8 @@ public class GUI extends JFrame {
             GUI.this.setIgnoreRepaint(true);
         };
 
-        scheduler.scheduleAtFixedRate(Shooting, 0, 500, TimeUnit.MILLISECONDS); // Shoots bullet
-        scheduler.scheduleAtFixedRate(invaders_pop, 0, 7500, TimeUnit.MILLISECONDS); //Makes invaders pop
+        scheduler.scheduleAtFixedRate(Shooting, 0, 750, TimeUnit.MILLISECONDS); // Shoots bullet
+        scheduler.scheduleAtFixedRate(invaders_pop, 0, 5000, TimeUnit.MILLISECONDS); //Makes invaders pop
         scheduler.scheduleAtFixedRate(invading, 0, 20, TimeUnit.MILLISECONDS); // Moves invaders 
         scheduler.scheduleAtFixedRate(bullet_move, 0, 20, TimeUnit.MILLISECONDS); // Moves bullets
         scheduler.scheduleAtFixedRate(destroy_ship, 0, 100, TimeUnit.MILLISECONDS); // Remove destroyed ships and the bullets that caused the destruction

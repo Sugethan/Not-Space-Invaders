@@ -8,6 +8,4 @@ public class App {
         key_binder.make_bindings(game); // Binds the key for movement and shooting
 
     }
-        
-
 }

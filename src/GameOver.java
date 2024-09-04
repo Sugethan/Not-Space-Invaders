@@ -17,13 +17,14 @@ public class GameOver{
         text.setForeground(Color.RED); // Text color
         text.setBackground(Color.BLACK);
         text.setFont(new Font("MONOSPACED", Font.CENTER_BASELINE, 50)); 
+        game.getContentPane().removeAll();  // Removes all components from the frame
         game.add(text);
         text.setBounds(40, 120, 500, 200);
 
         JButton button = new JButton("Replay");       
         button.addActionListener(new ActionListener() {  // Waits for the button to be pressed
             public void actionPerformed(ActionEvent e) {  // Defines the action to perform
-                game.start(); // Starts the game
+                StartScreen.screen(game); // Return to the starting screen
             }
         });
 
