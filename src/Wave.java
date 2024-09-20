@@ -15,7 +15,7 @@ public class Wave {
 
     public static void WavePop(GUI game) {
 
-        switch (game.countdown/accel_rate > -1 ? 2: game.countdown/accel_rate > 0 ? 1 : 0) {
+        switch (game.countdown/accel_rate > 1 ? 2: game.countdown/accel_rate > 0 ? 1 : 0) {
 
             case 0:
                 for (int n = 0; n < invaders_per_wave; n++) {
