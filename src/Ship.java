@@ -22,6 +22,7 @@ public class Ship extends JPanel{
         this.setOpaque(false); // Set non-opaque background for the panel
     }
 
+    @Override
     protected void paintComponent(Graphics g) {
 
         super.paintComponent(g);
@@ -41,14 +42,14 @@ public class Ship extends JPanel{
     public void move(GUI game, int LeftorRight) { // Move to the left if int is negative and to the right if the int is positive 
 
         switch (this.x_pos + LeftorRight * this.speed < 0 ? 1 : this.x_pos + LeftorRight * this.speed > game.getWidth() - this.width ? 1 : 0 ) {
-            case 1:
-                break;
+            case 1 -> {
+            }
         
-            case 0:
+            case 0 -> {
                 this.x_pos = this.x_pos + LeftorRight * this.speed; // Update position
                 this.gun_position = this.x_pos + this.getPreferredSize().width/2 -3 ; // Update gun position
                 this.setBounds(this.x_pos, this.y_pos, this.width, this.height);
-                break;
+            }
         }
     }
 }

@@ -13,11 +13,13 @@ public class key_bindings {
 
         AbstractAction LeftMove = new AbstractAction() {  // Action "move to the left"
             
+            @Override
             public void actionPerformed(ActionEvent e) {game.player.move(game,-1);}
         };
         
         AbstractAction RightMove = new AbstractAction() { // Action "move to the right"
             
+            @Override
             public void actionPerformed(ActionEvent e) {game.player.move(game,1);}   
         };
 
